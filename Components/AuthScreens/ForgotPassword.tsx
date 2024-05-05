@@ -8,7 +8,7 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
   const [email,setEmail] = React.useState('');
 
   const handleRedefinir = () => {
-    if(email === '') {
+    if(email !== '') {
         console.log('email de redefinição enviado!');
         navigation.navigate('Login');
     } else {
@@ -23,7 +23,7 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
         <Text style={styles.title}>Redefinir Senha </Text>
     <View style={styles.container}>
       
-    <Text style={stylesRedef.text} >
+    <Text style={{width:250, marginBottom:20}} >
     Para recuperar sua Conta iremos enviar um email para voce redefinir sua senha
     </Text>
 
@@ -41,7 +41,7 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
     </View>
     {/* <Text style={styles.button} onPress={handleLogin}>LOGAR</Text> */}
 
-    <Text style={stylesRedef.button} onPress={handleRedefinir}>ENVIAR</Text>
+    <Text style={stylesRedef.button}>ENVIAR</Text>
     <Text style={styles.button} onPress={() => {navigation.navigate('Login')}}>VOLTAR</Text>
 
     </ScrollView>
@@ -64,8 +64,6 @@ const stylesRedef = StyleSheet.create({
     color:"#4794A0",
     fontWeight:'bold',
 },
-  text:{
-    width:250,
-  }
+  
 
 })
