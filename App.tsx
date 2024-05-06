@@ -6,14 +6,16 @@ import Products from './Components/AppScreens/Products';
 
 import ForgotPassword from './Components/AuthScreens/ForgotPassword';
 import SingUp from './Components/AuthScreens/SingUp';
+import Interests from './Components/AppScreens/Interests';
 
 
 export type RootStackParamList = {
   // Products: { credenial: Credential };
   Products: undefined;
   Login: undefined;
-  RedefinirSenha:undefined;
-  Cadastro:undefined;
+  redefine:undefined;
+  SingUp:undefined;
+  Interests:undefined;
   
 };
 
@@ -24,10 +26,11 @@ function App(): React.JSX.Element {
     
       
     <NavigationContainer >
-      <Stack.Navigator initialRouteName='Login' >
+      <Stack.Navigator initialRouteName='SingUp' >
+        <Stack.Screen name="SingUp" component={SingUp} />
         <Stack.Screen  name="Login" component={Login} />
-        <Stack.Screen name="RedefinirSenha" component={ForgotPassword} />
-        <Stack.Screen name="Cadastro" component={SingUp} />
+        <Stack.Screen name="redefine" component={ForgotPassword} />
+        <Stack.Screen name="Interests" component={Interests} />
         <Stack.Screen name="Products" component={Products} />
       </Stack.Navigator>
     </NavigationContainer>

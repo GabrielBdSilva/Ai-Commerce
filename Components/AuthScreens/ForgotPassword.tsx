@@ -8,11 +8,11 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
   const [email,setEmail] = React.useState('');
 
   const handleRedefinir = () => {
-    if(email !== '') {
+    if(email.length > 5 ) {
         console.log('email de redefinição enviado!');
         navigation.navigate('Login');
     } else {
-        alert('Digite seu Email');
+        alert('Digite um Email valido');
     }
 }
 
@@ -41,7 +41,7 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
     </View>
     {/* <Text style={styles.button} onPress={handleLogin}>LOGAR</Text> */}
 
-    <Text style={stylesRedef.button}>ENVIAR</Text>
+    <Text style={stylesRedef.button} onPress={handleRedefinir}>ENVIAR</Text>
     <Text style={styles.button} onPress={() => {navigation.navigate('Login')}}>VOLTAR</Text>
 
     </ScrollView>
