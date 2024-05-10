@@ -92,7 +92,7 @@ const interestsData = [
       <Text style={styles.button}onPress={() => {navigation.navigate('Products')}}>AVANÇAR</Text>
       </ScrollView>
           </View>
-        //   TAAA COMFLITTANDO O SCROLLVIEW COM O MEU FLATLISTTT!!! (virtualizedLists)
+        //   TAAA COMFLITTANDO O SCROLLVIEW COM O MEU FLATLISTTT!!! \(-_-)/ erro(virtualizedLists)
     );
   };
 

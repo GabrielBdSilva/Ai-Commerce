@@ -8,6 +8,9 @@ import ForgotPassword from './Components/AuthScreens/ForgotPassword';
 import SingUp from './Components/AuthScreens/SingUp';
 import Interests from './Components/AppScreens/Interests';
 
+import { View, Alert, Image, Text, TouchableOpacity } from 'react-native';
+import HeaderTitle from './Components/HeaderTitle';
+
 
 export type RootStackParamList = {
   // Products: { credenial: Credential };
@@ -19,6 +22,19 @@ export type RootStackParamList = {
   
 };
 
+
+
+const ContextMenu = () => {
+  return (
+    <TouchableOpacity onPress={() => Alert.alert('hey folks')}>
+      <Text>Info</Text>
+    </TouchableOpacity>
+  );
+};
+
+
+
+
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function App(): React.JSX.Element {
@@ -26,16 +42,22 @@ function App(): React.JSX.Element {
     
       
     <NavigationContainer >
-      <Stack.Navigator initialRouteName='SingUp' >
+      <Stack.Navigator initialRouteName='SingUp'  >
         <Stack.Screen name="SingUp" component={SingUp} />
         <Stack.Screen  name="Login" component={Login} />
         <Stack.Screen name="redefine" component={ForgotPassword} />
         <Stack.Screen name="Interests" component={Interests} />
-        <Stack.Screen name="Products" component={Products} />
+        <Stack.Screen name="Products" component={Products}
+        options={{
+          // headerShown: false,
+          headerTitle: () => <HeaderTitle/>,
+          headerRight: () => <ContextMenu />,
+          // headerTintColor: '#00ffff',
+
+        }} 
+        />
       </Stack.Navigator>
     </NavigationContainer>
-      
-    
   );
 };
 
