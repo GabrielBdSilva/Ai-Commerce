@@ -9,7 +9,10 @@ import SingUp from './Components/AuthScreens/SingUp';
 import Interests from './Components/AppScreens/Interests';
 
 import { View, Alert, Image, Text, TouchableOpacity } from 'react-native';
-import HeaderTitle from './Components/HeaderTitle';
+import Header from './Components/Header';
+import DetailProducts from './Components/AppScreens/DetailProduct';
+import Cart from './Components/AppScreens/cart';
+import Profile from './Components/AppScreens/Profile';
 
 
 export type RootStackParamList = {
@@ -19,6 +22,9 @@ export type RootStackParamList = {
   redefine:undefined;
   SingUp:undefined;
   Interests:undefined;
+  DetailProducts:undefined;
+  Profile:undefined;
+  Cart:undefined;
   
 };
 
@@ -28,6 +34,7 @@ const ContextMenu = () => {
   return (
     <TouchableOpacity onPress={() => Alert.alert('hey folks')}>
       <Text>Info</Text>
+      
     </TouchableOpacity>
   );
 };
@@ -42,20 +49,38 @@ function App(): React.JSX.Element {
     
       
     <NavigationContainer >
-      <Stack.Navigator initialRouteName='SingUp'  >
+      <Stack.Navigator initialRouteName='SingUp' 
+      screenOptions={{headerShown: false,headerStyle:{backgroundColor:'#8FCBD1'}, statusBarColor:'#0f0f0f',headerTintColor: '#fff',}}>
+        
         <Stack.Screen name="SingUp" component={SingUp} />
         <Stack.Screen  name="Login" component={Login} />
         <Stack.Screen name="redefine" component={ForgotPassword} />
-        <Stack.Screen name="Interests" component={Interests} />
+        <Stack.Screen name="Interests" component={Interests}/>
         <Stack.Screen name="Products" component={Products}
         options={{
-          // headerShown: false,
-          headerTitle: () => <HeaderTitle/>,
-          headerRight: () => <ContextMenu />,
-          // headerTintColor: '#00ffff',
+          // contentStyle:{backgroundColor:'#f0ff00'},//muda cor do fundo todo
+          headerShown: true, //apaga ou exibe o header
+          headerStyle:{backgroundColor:'#8FCBD1'},
+          // headerBackImageSource:0,//o botão só ta invisivel, mas ta lá ainda
+          headerTitle: () => <Header/>,
+          // headerRight: () => <ContextMenu />,
+          
+          headerBackVisible:false,//tira o o botão de voltar
 
         }} 
         />
+        {/* PRECISO CLICAR NO ICONE DO HEADER E ELE NAVEGAR  E
+        TBM PRECISO ARRUMAR O CARRINHO E PERFIL PRA FICA RESPONSIVO EM QLQR TELA */}
+        <Stack.Screen name="DetailProducts" component={DetailProducts}
+        options={{
+        headerShown:true,
+        headerTitle: () => <Header/>,
+        }}/>
+        <Stack.Screen name="Profile" component={Profile}/>
+        <Stack.Screen name="Cart" component={Cart}/>
+
+
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

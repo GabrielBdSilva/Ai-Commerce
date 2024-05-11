@@ -44,8 +44,8 @@ export type Credential = {
 
 
 //email e senha estaticos
-const Email = 'rm@fiap.com.br';
-const Password = '@Fiap123';
+const Email = 'a';
+const Password = 'a';
 
 
 const Login= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
