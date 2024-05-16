@@ -11,7 +11,7 @@ import Interests from './Components/AppScreens/Interests';
 import { View, Alert, Image, Text, TouchableOpacity } from 'react-native';
 import Header from './Components/Header';
 import DetailProducts from './Components/AppScreens/DetailProduct';
-import Cart from './Components/AppScreens/cart';
+import Cart from './Components/AppScreens/Cart';
 import Profile from './Components/AppScreens/Profile';
 
 
@@ -22,21 +22,10 @@ export type RootStackParamList = {
   redefine:undefined;
   SingUp:undefined;
   Interests:undefined;
-  DetailProducts:undefined;
+  DetailProducts: { product: any };
   Profile:undefined;
   Cart:undefined;
   
-};
-
-
-
-const ContextMenu = () => {
-  return (
-    <TouchableOpacity onPress={() => Alert.alert('hey folks')}>
-      <Text>Info</Text>
-      
-    </TouchableOpacity>
-  );
 };
 
 

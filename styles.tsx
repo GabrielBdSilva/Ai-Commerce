@@ -54,7 +54,36 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         
         alignSelf:"flex-start",
-    }
+    },
+
+
+
+    safeArea: {
+        flex: 1,
+    },
+    card: {
+        padding: 16,
+        backgroundColor: '#f9f9f9',
+        borderRadius: 8,
+        marginBottom: 16,
+        alignItems: 'center',
+      },
+      image: {
+        width: 100,
+        height: 100,
+        borderRadius: 8,
+        marginBottom: 8,
+      },
+      name: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 8,
+      },
+      price: {
+        fontSize: 14,
+        color: '#888',
+      },
+
     
 })
 export default styles;

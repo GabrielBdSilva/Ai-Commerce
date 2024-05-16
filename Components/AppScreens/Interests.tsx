@@ -12,10 +12,10 @@ const interestsData = [
   'Música',];
 
   const Interests = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
-    const [selectedInterests, setSelectedInterests] = useState([]);
+    const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
     const [searchText, setSearchText] = useState('');
   
-    const handleSelectInterest = (interest) => {
+    const handleSelectInterest = (interest:any) => {
       if (selectedInterests.includes(interest)) {
         setSelectedInterests(selectedInterests.filter((i) => i !== interest));
       } else {
@@ -23,7 +23,7 @@ const interestsData = [
       }
     };
   
-    const handleSearch = (text) => {
+    const handleSearch = (text:any) => {
       setSearchText(text);
     };
   
@@ -35,7 +35,7 @@ const interestsData = [
         <View style={styles.Fundo}>
             
       <ScrollView >
-      
+      <View>
       <Text 
           style={{textAlign:'center', width:320, fontSize:50, fontWeight:'bold', marginTop:40, marginBottom:20,color:'#fff',}}>
           INTERESSES</Text>
@@ -70,6 +70,7 @@ const interestsData = [
           )}
         
         {/* Tenho q quebrar um item do lado do outro e tambem o interesse quando passa do limite da tela*/}
+          
           <FlatList 
             data={filteredInterests}
             renderItem={({ item }) => (
@@ -87,7 +88,7 @@ const interestsData = [
             
           />
         
-        
+        </View>
       </View>
       <Text style={styles.button}onPress={() => {navigation.navigate('Products')}}>AVANÇAR</Text>
       </ScrollView>
