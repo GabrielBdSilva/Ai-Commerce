@@ -22,7 +22,7 @@ export type RootStackParamList = {
   redefine:undefined;
   SingUp:undefined;
   Interests:undefined;
-  DetailProducts: { product: any };
+  DetailProducts: { productId: number };
   Profile:undefined;
   Cart:undefined;
   

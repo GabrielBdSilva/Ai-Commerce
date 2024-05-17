@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
 
 
 
+    //detailProduct______________________________________________________
     safeArea: {
         flex: 1,
     },
@@ -83,7 +84,8 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: '#888',
       },
+ //fim detailProduct______________________________________________________
+ 
 
-    
 })
 export default styles;
