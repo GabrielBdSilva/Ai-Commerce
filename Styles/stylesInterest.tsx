@@ -8,6 +8,8 @@ const stylesInterest = StyleSheet.create({
       margin: 20,
       width:100,
       height:100,
+      alignItems:'center',
+
     },
     interestItemSelected: {
       backgroundColor: '#f0f0f0',
@@ -27,6 +29,7 @@ const stylesInterest = StyleSheet.create({
         fontSize: 13,
         marginRight:20,
         marginBottom:20,
+        height:20,
       },
       noSelectedInterestsText: {
         fontSize: 16,

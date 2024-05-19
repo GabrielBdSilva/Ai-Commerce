@@ -10,7 +10,7 @@ const Cart = () => {
   return (
     <View>
       
-      <Text>Carrinho Terá todos itens comprados </Text>
+      <Text>Carrinho Terá todos itens, e com base neles uma sessão d produtos recomendados pela IA</Text>
       
     </View>
   );

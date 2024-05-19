@@ -15,6 +15,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius:15,
     },
+    containerInte:{
+      // flex: 1,
+      backgroundColor: '#Fff',
+      padding:30,
+      width:340,
+      height:450,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius:15,
+  },
     title:{
         textAlign:'center',
         width:320,

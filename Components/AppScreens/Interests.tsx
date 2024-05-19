@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList,ScrollView, TextInput, StyleSheet, TouchableOpacity, SafeAreaViewBase } from 'react-native';
+import { View, Text, FlatList,ScrollView, TextInput, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import styles from '../../Styles/styles';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
-import { SafeAreaView } from 'react-native-safe-area-context';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 import stylesInterest from '../../Styles/stylesInterest';
 
 const interestsData = [
   'Culinária',
   'Tecnologia',
   'Esportes',
-  'Música',];
+  'Música',
+
+  'Tecnolaaogia',
+  'Espoaartes',
+  'Múaasica',
+
+];
 
   const Interests = ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
     const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
@@ -35,7 +41,7 @@ const interestsData = [
     return (
         <View style={styles.Fundo}>
             
-      <ScrollView >
+            <SafeAreaView style={styles.safeArea}>
       <View>
       <Text 
           style={{textAlign:'center', width:320, fontSize:50, fontWeight:'bold', marginTop:40, marginBottom:20,color:'#fff',}}>
@@ -44,7 +50,7 @@ const interestsData = [
           Nos diga o que você busca para personalizarmos seu feed
     </Text>
         
-      <View style={styles.container}>
+      <View style={styles.containerInte}>
       
           <TextInput
             style={styles.input}
@@ -64,13 +70,13 @@ const interestsData = [
                 
               )}
               keyExtractor={(item) => item}
-              horizontal={true}
+              horizontal={true} //scrollar na horizontal
               />
           ) : (
               <Text style={stylesInterest.noSelectedInterestsText}>Nenhum interesse selecionado.</Text>
           )}
         
-        {/* Tenho q quebrar um item do lado do outro e tambem o interesse quando passa do limite da tela*/}
+        
           
           <FlatList 
             data={filteredInterests}
@@ -93,7 +99,7 @@ const interestsData = [
         </View>
       </View>
       <Text style={styles.button}onPress={() => {navigation.navigate('Products')}}>AVANÇAR</Text>
-      </ScrollView>
+      </SafeAreaView>
           </View>
         //   TAAA COMFLITTANDO O SCROLLVIEW COM O MEU FLATLISTTT!!! \(-_-)/ erro(virtualizedLists)
     );
