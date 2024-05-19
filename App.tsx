@@ -78,7 +78,7 @@ function App(): React.JSX.Element {
         }}/>
 
         {/*
-        apagar esse codigo quando separar a tela d logon e outras
+        apagar esse codigo quando separar a tela d login e outras
         options={{
         headerShown:true,
         headerTitle: () => <Header/>,

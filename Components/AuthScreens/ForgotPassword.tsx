@@ -10,6 +10,7 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
   const handleRedefinir = () => {
     if(email.length > 5 ) {
         console.log('email de redefinição enviado!');
+        alert('email de redefinição enviado!');
         navigation.navigate('Login');
     } else {
         alert('Digite um Email valido');

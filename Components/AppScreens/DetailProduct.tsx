@@ -36,7 +36,7 @@ const DetailProducts = ({navigation}:NativeStackScreenProps<RootStackParamList>)
 
   const addOnCart = () =>{
     //LOGICA  de adicionar o produto ao carrinho e mudar o estado do carrinho lá do header
-    alert('Produto Adicionado ao Carrinho');//trocar pro react-toastify pra aparecer msg mais amigavel
+    alert('Produto Adicionado ao Carrinho, sqn');//trocar pro react-toastify pra aparecer msg mais amigavel
     navigation.navigate('Products')
   }
   
