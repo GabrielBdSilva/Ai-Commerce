@@ -26,7 +26,7 @@ const SingUp= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
   return (
       
           <View style={styles.Fundo}>
-      <ScrollView >
+      <ScrollView showsVerticalScrollIndicator={false}>
           <Text 
           style={{textAlign:'center', width:320, fontSize:50, fontWeight:'bold', marginTop:50, marginBottom:30,color:'#fff',}}>
           CADASTRO</Text>

@@ -64,7 +64,7 @@ const Login= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
     return (
         //scrollview pra tela n quebrar quando clica no input
             <View style={styles.Fundo}>
-        <ScrollView >
+        <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={styles.title}>Login</Text>
         <View style={styles.container}>
 

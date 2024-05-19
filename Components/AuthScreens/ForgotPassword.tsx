@@ -19,7 +19,7 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
   return (
     
         <View style={styles.Fundo}>
-    <ScrollView >
+    <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.title}>Redefinir Senha </Text>
     <View style={styles.container}>
       

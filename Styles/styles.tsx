@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#Fff',
         padding:30,
-       
+
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius:15,
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     input:{
         width:250,
         height:40,
-        // margin:10,
+        margin:10,
         padding:10,
         borderRadius:50,
         backgroundColor:'#EAEAEA',
@@ -45,6 +45,19 @@ const styles = StyleSheet.create({
         color:"#4794A0",
         fontWeight:'bold',
     },
+    buttonDt:{
+      width:300,
+      height:40,
+      padding:10,
+      borderRadius:50,
+      backgroundColor:'#8FCBD1',
+      textAlign:'center',
+      // alignSelf:"center",
+      margin:20,
+      color:"#fff",
+      fontWeight:'bold',
+  },
+
     forgotAndSingup:{
         marginTop: 15,
         alignSelf:"flex-end",
@@ -61,17 +74,26 @@ const styles = StyleSheet.create({
     //detailProduct______________________________________________________
     safeArea: {
         flex: 1,
+        alignItems: 'center',
+        // justifyContent: 'center',
+
     },
     card: {
         padding: 16,
-        backgroundColor: '#f9f9f9',
+        // backgroundColor: '#f9f9f9',
         borderRadius: 8,
-        marginBottom: 16,
+        margin: 20,
         alignItems: 'center',
       },
       image: {
         width: 100,
         height: 100,
+        borderRadius: 8,
+        marginBottom: 8,
+      },
+      imagedt: {
+        width: 250,
+        height: 250,
         borderRadius: 8,
         marginBottom: 8,
       },

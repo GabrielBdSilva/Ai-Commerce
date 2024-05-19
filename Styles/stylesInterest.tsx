@@ -5,7 +5,7 @@ const stylesInterest = StyleSheet.create({
       borderWidth: 1,
       borderColor: '#ccc',
       borderRadius: 4,
-      marginBottom: 10,
+      margin: 20,
       width:100,
       height:100,
     },

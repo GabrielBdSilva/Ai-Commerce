@@ -20,7 +20,7 @@ type Product = {
   price: number;
   image: string;
 };
-
+//forma passando o stakk pra uma variavel
   type Props = NativeStackScreenProps<RootStackParamList, 'Products'>;
   const Products = ({ navigation }: Props) => {  
     const [products, setProducts] = useState<Product[]>([]);
@@ -54,6 +54,9 @@ type Product = {
           onChangeText={setPesquisa}
         />
 
+{/* jeito d add uma flatlist dentro da outra pra exibir por categoria: tipo promoção/destaque/recomendados
+ https://cursos.alura.com.br/forum/topico-duvida-flatlist-283299#:~:text=Sim%2C%20%C3%A9%20poss%C3%ADvel%20colocar%20uma,uma%20lista%20de%20produtos%20relacionados. */}
+       
         <FlatList
           data={productsFiltrados}
           renderItem={({ item }) => (
@@ -61,8 +64,9 @@ type Product = {
               <CardProduct product={item} />
             </TouchableOpacity>
           )}
+          numColumns={2}
           keyExtractor={item => item.id.toString()}
-          showsVerticalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}//serve pra tirar a barrinha da direita
         />
       
     </SafeAreaView>
@@ -74,11 +78,13 @@ type CardProductProps = {
 
 const CardProduct = ({ product }: CardProductProps) => {
   return (
+    <>
     <View style={styles.card}>
       <Image source={{ uri: product.image }} style={styles.image} />
       <Text style={styles.name}>{product.name}</Text>
       <Text style={styles.price}>R$ {product.price.toFixed(2)}</Text>
     </View>
+    </>
   );
 };
 

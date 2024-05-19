@@ -65,8 +65,24 @@ function App(): React.JSX.Element {
         headerShown:true,
         headerTitle: () => <Header/>,
         }}/>
-        <Stack.Screen name="Profile" component={Profile}/>
-        <Stack.Screen name="Cart" component={Cart}/>
+        <Stack.Screen name="Profile" component={Profile}
+        options={{
+          headerShown:true,
+          headerTitle: () => <Header/>,
+          }}/>
+
+        <Stack.Screen name="Cart" component={Cart}
+        options={{
+        headerShown:true,
+        headerTitle: () => <Header/>,
+        }}/>
+
+        {/*
+        apagar esse codigo quando separar a tela d logon e outras
+        options={{
+        headerShown:true,
+        headerTitle: () => <Header/>,
+        }}/> */}
 
 
         

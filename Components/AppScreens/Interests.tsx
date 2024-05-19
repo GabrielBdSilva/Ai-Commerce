@@ -45,7 +45,7 @@ const interestsData = [
     </Text>
         
       <View style={styles.container}>
-      <Text style={styles.inputText} >Procurar</Text>
+      
           <TextInput
             style={styles.input}
             placeholder="Pesquisar interesse"
@@ -86,6 +86,7 @@ const interestsData = [
               </TouchableOpacity>
             )}
             keyExtractor={(item) => item}
+            numColumns={2}
             
           />
         
