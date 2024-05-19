@@ -3,49 +3,14 @@ import{View,Text,TextInput,Button, StyleSheet, ViewBase, ScrollView} from 'react
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 import styles from '../../Styles/styles';
+import client from '../services/api';
 
 
-
-/* //Login utilizando a api
-const handleLogin = async () => {
-    try {
-      const response = await fetch('meu endpoint aqui', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
-  
-      const data = await response.json();
-  
-      if (data.success) {
-        
-        console.log('Login realizado com sucesso!');
-        navigation.navigate('Products');
-      } else {
-        
-        alert('Email ou senha incorretos.');
-      }
-    } catch (error) {
-      console.error('Erro ao realizar login:', error);
-      alert('Erro ao realizar login. Tente novamente.');
-    }
-  }; 
-*/
-
-export type Credential = {
-    email: string;
-    //password: string;
-  };
 
 
 //email e senha estaticos
-const Email = 'a';
-const Password = 'a';
+// const Email = 'gabriel.sites3200@gmail.com';
+// const Password = '12345';
 
 
 const Login= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
@@ -53,13 +18,28 @@ const Login= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
     const [email,setEmail] = React.useState('');
     const [password,setPassword] = React.useState('');
 
-    const handleLogin = () => {
-        if(email === Email && password === Password) {
-            console.log('Login realizado com sucesso!');
-            navigation.navigate('Products');
-        } else {
-            alert('Email ou senha invalidos');
+    const handleLogin = async () => {
+      try {
+        const response = await client.get('/users');
+        const users = response.data;
+
+        const User = users.find(user => user.email === email);
+        if(User && User.password === password){
+          console.log('login realizado!');
+          navigation.navigate('Products');
+        }else{
+          alert('Email ou senha incorretos')
         }
+      }catch(error){
+        console.error('Deu esse erro -_-: ', error);
+        alert('Erro ao realizar login, tente novamente');
+      }
+        // if(email === Email && password === Password) {
+        //     console.log('Login realizado com sucesso!');
+        //     navigation.navigate('Products');
+        // } else {
+        //     alert('Email ou senha invalidos');
+        // }
     }
     return (
         //scrollview pra tela n quebrar quando clica no input

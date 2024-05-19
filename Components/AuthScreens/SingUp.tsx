@@ -3,6 +3,7 @@ import{View,Text,TextInput,Button, StyleSheet, ViewBase, ScrollView} from 'react
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
 import styles from '../../Styles/styles';
+import client from '../services/api';
 
 
 
@@ -13,11 +14,23 @@ const SingUp= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
   const [cpf,setCpf] = React.useState('');
   const [password,setPassword] = React.useState('');
 
-  const handleCadastro = () => {
-      if(name.length >= 3  && email.length >= 5 && cpf.length  >= 11 && password.length >= 5) {
-          console.log('Cadastro realizado com sucesso!');
-          navigation.navigate('Interests');
 
+  const handleCadastro = async () => {
+      if(name.length >= 3  && email.length >= 5 && cpf.length  >= 11 && password.length >= 5) {
+        try{
+            const response = await client.post('/users',{
+                name,
+                email,
+                cpf,
+                password
+            });
+            
+            console.log('Cadastro realizado com sucesso!', response.data);
+            navigation.navigate('Interests');
+        } catch (error){
+            console.error('erro ao registrar usuuario: ',error);
+            alert('Erro ao cadastrar! Tente novamente!');
+        }
         
       } else {
           alert('Preencha todos os campos corretamente');

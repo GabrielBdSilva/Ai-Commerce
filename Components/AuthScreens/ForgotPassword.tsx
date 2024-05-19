@@ -40,9 +40,9 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
         />
 
     </View>
-    {/* <Text style={styles.button} onPress={handleLogin}>LOGAR</Text> */}
+    
 
-    <Text style={stylesRedef.button} onPress={handleRedefinir}>ENVIAR</Text>
+    <Text style={styles.buttonRedef} onPress={handleRedefinir}>ENVIAR</Text>
     <Text style={styles.button} onPress={() => {navigation.navigate('Login')}}>VOLTAR</Text>
 
     </ScrollView>
@@ -52,19 +52,3 @@ const ForgotPassword = ({navigation}: NativeStackScreenProps<RootStackParamList>
 
 export default ForgotPassword;
 
-const stylesRedef = StyleSheet.create({
-  button:{
-    width:250,
-    height:40,
-    padding:10,
-    borderRadius:50,
-    backgroundColor:'#DCEFF1',
-    textAlign:'center',
-    alignSelf:"center",
-    marginTop:40,
-    color:"#4794A0",
-    fontWeight:'bold',
-},
-  
-
-})

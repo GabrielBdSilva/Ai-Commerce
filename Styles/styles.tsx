@@ -80,6 +80,20 @@ const styles = StyleSheet.create({
     },
 
 
+    //redefinirsenha_________________________
+    buttonRedef:{
+      width:250,
+      height:40,
+      padding:10,
+      borderRadius:50,
+      backgroundColor:'#DCEFF1',
+      textAlign:'center',
+      alignSelf:"center",
+      marginTop:40,
+      color:"#4794A0",
+      fontWeight:'bold',
+  },
+
 
     //detailProduct______________________________________________________
     safeArea: {

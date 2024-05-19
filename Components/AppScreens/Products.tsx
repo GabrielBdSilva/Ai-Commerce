@@ -28,7 +28,7 @@ type Product = {
     
 
     const fetchProducts = async () => {
-      
+      //dados pegando direto da api 'mockapi'
         const response = await client.get('/products'); 
         setProducts(response.data);
     

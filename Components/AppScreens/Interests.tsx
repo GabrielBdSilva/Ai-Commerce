@@ -101,7 +101,6 @@ const interestsData = [
       <Text style={styles.button}onPress={() => {navigation.navigate('Products')}}>AVANÇAR</Text>
       </SafeAreaView>
           </View>
-        //   TAAA COMFLITTANDO O SCROLLVIEW COM O MEU FLATLISTTT!!! \(-_-)/ erro(virtualizedLists)
     );
   };
 
