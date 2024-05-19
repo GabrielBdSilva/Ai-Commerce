@@ -47,19 +47,18 @@ function App(): React.JSX.Element {
         <Stack.Screen name="Interests" component={Interests}/>
         <Stack.Screen name="Products" component={Products}
         options={{
-          // contentStyle:{backgroundColor:'#f0ff00'},//muda cor do fundo todo
+          
           headerShown: true, //apaga ou exibe o header
           headerStyle:{backgroundColor:'#8FCBD1'},
-          // headerBackImageSource:0,//o botão só ta invisivel, mas ta lá ainda
+          
           headerTitle: () => <Header/>,
-          // headerRight: () => <ContextMenu />,
+          
           
           headerBackVisible:false,//tira o o botão de voltar
 
         }} 
         />
-        {/* PRECISO CLICAR NO ICONE DO HEADER E ELE NAVEGAR  E
-        TBM PRECISO ARRUMAR O CARRINHO E PERFIL PRA FICA RESPONSIVO EM QLQR TELA */}
+        {/* PRECISO CLICAR NO ICONE DO HEADER E ELE NAVEGAR */}
         <Stack.Screen name="DetailProducts" component={DetailProducts}
         options={{
         headerShown:true,
