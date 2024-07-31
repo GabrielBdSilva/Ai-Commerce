@@ -70,8 +70,8 @@ const Login= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
             />
 
 
-            <Text style={styles.forgotAndSingup} onPress={() => {navigation.navigate('ForgotPassword')}}>Esqueci a senha</Text>
-            <Text style={styles.forgotAndSingup} onPress={() => {navigation.navigate('SignUp')}}>Não tenho conta</Text>
+            <Text style={styles.forgotAndSignUp} onPress={() => {navigation.navigate('ForgotPassword')}}>Esqueci a senha</Text>
+            <Text style={styles.forgotAndSignUp} onPress={() => {navigation.navigate('SignUp')}}>Não tenho conta</Text>
         </View>
         <Text style={styles.button} onPress={handleLogin}>LOGAR</Text>
 

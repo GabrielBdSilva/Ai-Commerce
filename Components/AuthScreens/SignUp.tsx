@@ -87,7 +87,7 @@ const SignUp= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
           />
 
 
-          <Text style={styles.forgotAndSingup} onPress={() => {navigation.navigate('Login')}}>Já tenho conta</Text>
+          <Text style={styles.forgotAndSignUp} onPress={() => {navigation.navigate('Login')}}>Já tenho conta</Text>
       </View>
       <Text style={styles.button} onPress={handleCadastro}>CADASTRAR</Text>
 
