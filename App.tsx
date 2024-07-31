@@ -5,7 +5,7 @@ import Login from './Components/AuthScreens/Login';
 import Products from './Components/AppScreens/Products';
 
 import ForgotPassword from './Components/AuthScreens/ForgotPassword';
-import SingUp from './Components/AuthScreens/SingUp';
+import SignUp from './Components/AuthScreens/SignUp';
 import Interests from './Components/AppScreens/Interests';
 
 import { View, Alert, Image, Text, TouchableOpacity } from 'react-native';
@@ -19,8 +19,8 @@ export type RootStackParamList = {
   // Products: { credenial: Credential };
   Products: undefined;
   Login: undefined;
-  redefine:undefined;
-  SingUp:undefined;
+  ForgotPassword:undefined;
+  SignUp:undefined;
   Interests:undefined;
   DetailProducts: { productId: number };
   Profile:undefined;
@@ -38,12 +38,12 @@ function App(): React.JSX.Element {
     
       
     <NavigationContainer >
-      <Stack.Navigator initialRouteName='SingUp' 
+      <Stack.Navigator initialRouteName='SignUp' 
       screenOptions={{headerShown: false,headerStyle:{backgroundColor:'#8FCBD1'}, statusBarColor:'#0f0f0f',headerTintColor: '#fff',}}>
         
-        <Stack.Screen name="SingUp" component={SingUp} />
+        <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen  name="Login" component={Login} />
-        <Stack.Screen name="redefine" component={ForgotPassword} />
+        <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         <Stack.Screen name="Interests" component={Interests}/>
         <Stack.Screen name="Products" component={Products}
         options={{

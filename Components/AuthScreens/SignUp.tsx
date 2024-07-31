@@ -7,7 +7,7 @@ import client from '../services/api';
 
 
 
-const SingUp= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
+const SignUp= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
 
   const [name,setName] = React.useState('');
   const [email,setEmail] = React.useState('');
@@ -98,5 +98,5 @@ const SingUp= ({navigation}: NativeStackScreenProps<RootStackParamList>) => {
 
 
 }
-export default SingUp;
+export default SignUp;
 
