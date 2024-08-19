@@ -109,6 +109,13 @@ const styles = StyleSheet.create({
         margin: 20,
         alignItems: 'center',
       },
+      cardCart: {
+        padding: 16,
+        // backgroundColor: '#f9f9f9',
+        borderRadius: 8,
+        margin: 20,
+        alignItems: 'center',
+      },
       image: {
         width: 100,
         height: 100,

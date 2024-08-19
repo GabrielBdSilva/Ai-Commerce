@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState, useContext } from 'react';
+import { View, Text, Image, ScrollView, FlatList, TouchableOpacity, Alert } from 'react-native';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../../App';
@@ -7,6 +7,8 @@ import { RootStackParamList } from '../../App';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import styles from '../../Styles/styles';
 import client from '../services/api';
+
+import { CartContext } from '../context/CartContext';
 
 
 type DetailProductsRouteProp = RouteProp<RootStackParamList, 'DetailProducts'>;
@@ -24,6 +26,9 @@ const DetailProducts = ({navigation}:NativeStackScreenProps<RootStackParamList>)
   const [product,setProducts] =useState<Product | null>(null);
 
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
+  
+  const [cart, setCart] = useState<Product[]>([]);
+  const { addToCart } = useContext(CartContext);
 
   const fetchProductDetails = async () => {
     
@@ -47,11 +52,15 @@ const DetailProducts = ({navigation}:NativeStackScreenProps<RootStackParamList>)
     fetchRelatedProducts();
   }, [productId]);
 
-  const addOnCart = () =>{
-    //LOGICA  de adicionar o produto ao carrinho e mudar o estado do carrinho lá do header
-    alert('Produto Adicionado ao Carrinho, sqn');//trocar pro react-toastify pra aparecer msg mais amigavel
-    navigation.navigate('Products')
-  }
+  
+
+  const addOnCart = () => {
+    if (product) {
+      addToCart(product);
+      alert('Produto Adicionado ao Carrinho');
+      navigation.navigate('Products');
+    }
+  };
   
 
 

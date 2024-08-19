@@ -7,6 +7,9 @@ import { RootStackParamList } from '../../App';
 import styles from '../../Styles/styles';
 import client from '../services/api';
 
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
 // Dados mocados de produtos 
 // const products = [
 //   { id: 1, name: 'Processador AMD Ryzen 5 5600X', price: 1399.90, image: 'https://avatars.githubusercontent.com/u/91507840?s=400&u=18fdde96751cc79bdcd09143b025c8af8fe1ad06&v=4' },
@@ -53,6 +56,10 @@ type Product = {
           value={pesquisa}
           onChangeText={setPesquisa}
         />
+        <TouchableOpacity onPress={() => navigation.navigate('Cart')} style={{ marginRight: 15 }}>
+          <FontAwesomeIcon icon={faCartShopping} size={24} color="#fff" />
+          {/* <Text style={{ borderWidth: 2, borderRadius: 7, borderColor: '#fff', borderStyle: 'dotted', textAlign: 'center', textAlignVertical: 'center', color: '#fff' }}>0</Text> */}
+        </TouchableOpacity>
 
 {/* jeito d add uma flatlist dentro da outra pra exibir por categoria: tipo promoção/destaque/recomendados
  https://cursos.alura.com.br/forum/topico-duvida-flatlist-283299#:~:text=Sim%2C%20%C3%A9%20poss%C3%ADvel%20colocar%20uma,uma%20lista%20de%20produtos%20relacionados. */}
